@@ -1,7 +1,8 @@
 # Laporan Akhir
 
 ## 1. Topologi Jaringan
-<img width="1057" height="854" alt="Screenshot 2026-06-04 183507" src="https://github.com/user-attachments/assets/684b9b50-2e58-415f-b6ce-339314824622" />
+<img width="1907" height="962" alt="topology" src="https://github.com/user-attachments/assets/27ccfc06-64e3-409b-a421-04a036d9143a" />
+
 
 
 ## 2. Tabel IP Address
