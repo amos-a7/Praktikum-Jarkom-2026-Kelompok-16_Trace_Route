@@ -7,48 +7,57 @@
 
 
 ## 2. Tabel IP Address
-<img width="741" height="864" alt="Screenshot 2026-06-07 120003" src="https://github.com/user-attachments/assets/8e582605-cc5b-45f2-abe9-541dad79555f" />
+<img width="900" height="1600" alt="WhatsApp Image 2026-06-07 at 09 46 27" src="https://github.com/user-attachments/assets/a3ef958a-7fea-48b2-a373-a00fe6622b07" />
 
-<img width="632" height="842" alt="Screenshot 2026-06-07 120025" src="https://github.com/user-attachments/assets/c20104c9-72d9-42c0-a275-f3a283b1b6a1" />
-
-<img width="1053" height="606" alt="Screenshot 2026-06-07 120052" src="https://github.com/user-attachments/assets/1c65d64e-8788-4569-a670-90aef253f82f" />
 
 ## 3. Konfigurasi Tiap Perangkat
-<img width="992" height="870" alt="Screenshot 2026-06-07 120137" src="https://github.com/user-attachments/assets/3bce9b06-b14c-4ad5-8587-babf93812033" />
-
-<img width="862" height="871" alt="Screenshot 2026-06-07 120201" src="https://github.com/user-attachments/assets/ccc3ad44-ef23-4c81-8d84-c90d6b6fabf2" />
-
-<img width="896" height="818" alt="Screenshot 2026-06-07 120222" src="https://github.com/user-attachments/assets/f47e7f95-ffc8-4dee-8cf2-c1ef50b0191d" />
-
-<img width="1263" height="875" alt="Screenshot 2026-06-07 120239" src="https://github.com/user-attachments/assets/0f65395a-ad0d-4c12-8f91-6befdcd9ac24" />
+<img width="960" height="877" alt="1 2" src="https://github.com/user-attachments/assets/ee8f1764-42ca-4b6c-bec1-0bb90b1abef1" />
+<img width="961" height="864" alt="1 3" src="https://github.com/user-attachments/assets/f441dd4f-ec43-4f9e-a61b-9956a0e3f23e" />
+<img width="961" height="872" alt="2 2" src="https://github.com/user-attachments/assets/ba1d4089-e35f-4f10-a0dc-9dd6a6268b95" />
+<img width="953" height="295" alt="3 1" src="https://github.com/user-attachments/assets/62b56a1b-ee65-4cf4-8992-d0c130121bcf" />
+<img width="962" height="151" alt="3 2" src="https://github.com/user-attachments/assets/ee19edd3-862f-405a-873f-3855ddc61e45" />
+<img width="958" height="268" alt="3 4" src="https://github.com/user-attachments/assets/59451fcd-3bad-471a-b53c-d94cea5688b5" />
+<img width="916" height="240" alt="4 1" src="https://github.com/user-attachments/assets/af0da0db-e5c0-476b-a85b-83912d0cefb4" />
+<img width="959" height="107" alt="4 2" src="https://github.com/user-attachments/assets/4922d834-2eb4-45d5-8444-cd8c65790eef" />
+<img width="956" height="865" alt="5 1" src="https://github.com/user-attachments/assets/6db8f3b9-f547-4336-a8d1-7fab904df553" />
+<img width="951" height="615" alt="5 2" src="https://github.com/user-attachments/assets/a92ba564-1873-4b3f-894b-d61b217f4b02" />
+<img width="986" height="863" alt="5 3" src="https://github.com/user-attachments/assets/99b93548-0bd1-4dad-b956-72c2381dd22e" />
 
 
 ## 4. Hasil Pengujian
 
-Hasil pengujian terdapat pada file LA yang ada di folder Laporan_Akhir Modul-4
+Hasil pengujian terdapat pada file LA yang ada di folder Laporan_Akhir Modul-5
 
 ## 5. Analisis dan Kesimpulan
-Pada praktikum ini, dilakukan konfigurasi jaringan menggunakan beberapa perangkat yaitu MikroTik sebagai router ISP, FortiGate sebagai firewall utama, Cisco Router sebagai router internal, serta beberapa client pada jaringan LAN, WAN, dan DMZ.
+## Analisis
 
-Dari hasil konfigurasi yang dilakukan, jaringan berhasil dibagi menjadi beberapa segment, yaitu WAN, LAN, dan DMZ dengan subnet yang berbeda. MikroTik berhasil memberikan akses ke jaringan luar (internet simulation) dan terhubung dengan FortiGate melalui jaringan transit 10.10.10.0/30.
+Pada praktikum ini dilakukan implementasi jaringan perusahaan yang terdiri atas beberapa segmen jaringan menggunakan VLAN untuk memisahkan divisi Finance, IT, dan Server. Pemisahan VLAN bertujuan meningkatkan keamanan, memudahkan pengelolaan jaringan, serta mengurangi broadcast domain pada jaringan.
 
-FortiGate berfungsi sebagai firewall utama yang mengatur kebijakan komunikasi antar jaringan menggunakan firewall policy. LAN dapat mengakses WAN melalui NAT, sedangkan akses ke DMZ dikontrol menggunakan policy khusus. Selain itu, dilakukan juga konfigurasi VIP (Virtual IP) untuk memungkinkan akses layanan web di DMZ melalui alamat publik.
+Inter-VLAN Routing diimplementasikan menggunakan metode Router-on-a-Stick pada Cisco Router dengan memanfaatkan subinterface GigabitEthernet0/1.10, GigabitEthernet0/1.20, dan GigabitEthernet0/1.60. Setiap subinterface dikonfigurasi dengan VLAN ID dan alamat IP yang sesuai sehingga perangkat pada VLAN yang berbeda dapat saling berkomunikasi melalui proses routing.
 
-Hasil pengujian menunjukkan bahwa routing antar jaringan sudah berjalan dengan baik. Client LAN dapat mengakses internet, client WAN dapat mengakses layanan DMZ melalui port forwarding, namun akses langsung dari WAN ke LAN maupun DMZ tanpa aturan firewall berhasil diblokir sesuai dengan kebijakan keamanan yang diterapkan.
+Untuk meningkatkan ketersediaan layanan gateway, digunakan protokol VRRP antara Cisco Router dan MikroTik. Dengan adanya VRRP, kedua perangkat dapat menyediakan gateway virtual yang sama bagi host pada masing-masing VLAN. Apabila salah satu perangkat mengalami gangguan, perangkat lain dapat mengambil alih fungsi gateway sehingga layanan jaringan tetap berjalan. Pada implementasi ini Cisco dikonfigurasi sebagai master pada VLAN tertentu dan MikroTik sebagai backup, sedangkan pada VLAN lain MikroTik berperan sebagai master sesuai kebutuhan desain jaringan.
 
-Pada sisi troubleshooting, ditemukan beberapa kendala seperti tidak dapatnya ping dari WAN ke FortiGate yang disebabkan oleh konflik konfigurasi VIP dengan IP interface FortiGate. Setelah dilakukan perbaikan konfigurasi, komunikasi antar perangkat kembali normal.
+FortiGate digunakan sebagai firewall sekaligus gateway menuju ISP. Konfigurasi static route dan firewall policy memungkinkan lalu lintas dari jaringan internal menuju internet dapat diteruskan dengan benar. Selain itu, NAT pada FortiGate memungkinkan alamat IP private dari jaringan internal diterjemahkan menjadi alamat IP yang dapat digunakan untuk mengakses jaringan publik.
 
-### Kesimpulan
-Berdasarkan hasil praktikum ini dapat disimpulkan bahwa:
+Selama proses konfigurasi ditemukan beberapa kendala, seperti interface router yang masih berstatus administratively down, konfigurasi yang belum tersimpan sehingga hilang setelah perangkat direstart, serta masalah konektivitas akibat konfigurasi trunk dan VLAN yang belum sesuai. Permasalahan tersebut berhasil diatasi dengan melakukan verifikasi konfigurasi interface, routing, VRRP, serta memastikan setiap perangkat terhubung pada VLAN yang benar.
 
-1. Segmentasi jaringan menggunakan LAN, WAN, dan DMZ berhasil diimplementasikan dengan baik.
-2. MikroTik, FortiGate, dan Cisco Router dapat dikonfigurasi untuk mendukung routing antar jaringan.
-3. NAT berhasil digunakan untuk memungkinkan akses internet dari jaringan internal.
-4. Firewall FortiGate berhasil mengontrol lalu lintas antar jaringan sesuai kebijakan keamanan.
-5. VIP (Port Forwarding) memungkinkan akses layanan DMZ dari jaringan eksternal.
-6. Konfigurasi yang tidak tepat (seperti konflik IP pada VIP) dapat menyebabkan gangguan komunikasi jaringan.
+Berdasarkan hasil pengujian, host pada masing-masing VLAN berhasil memperoleh alamat IP yang sesuai, dapat berkomunikasi dengan gateway virtual VRRP, melakukan komunikasi antar VLAN, serta mengakses internet melalui FortiGate dan ISP. Hasil tersebut menunjukkan bahwa konfigurasi VLAN, routing, VRRP, dan firewall telah berfungsi sesuai dengan tujuan praktikum.
 
-Secara keseluruhan, praktikum ini berhasil menunjukkan implementasi konsep routing, NAT, firewall, dan segmentasi jaringan dalam lingkungan simulasi.
+
+## Kesimpulan
+
+1. VLAN berhasil diimplementasikan untuk memisahkan jaringan Finance, IT, dan Server sehingga setiap segmen jaringan memiliki broadcast domain yang terpisah.
+
+2. Inter-VLAN Routing menggunakan metode Router-on-a-Stick pada Cisco Router berhasil memungkinkan komunikasi antar VLAN yang berbeda.
+
+3. Protokol VRRP berhasil diterapkan pada Cisco Router dan MikroTik sehingga menyediakan mekanisme redundansi gateway dan meningkatkan ketersediaan layanan jaringan.
+
+4. FortiGate berhasil dikonfigurasi sebagai firewall dan gateway menuju ISP dengan penerapan routing, NAT, dan firewall policy yang memungkinkan akses internet dari jaringan internal.
+
+5. Pengujian konektivitas menunjukkan bahwa perangkat pada masing-masing VLAN dapat berkomunikasi dengan gateway, melakukan komunikasi antar jaringan, serta mengakses internet sesuai dengan konfigurasi yang telah dibuat.
+
+6. Praktikum ini memberikan pemahaman mengenai implementasi VLAN, routing, VRRP, firewall, dan troubleshooting jaringan yang diperlukan dalam membangun infrastruktur jaringan perusahaan yang andal dan terstruktur.
+
 
 
 
