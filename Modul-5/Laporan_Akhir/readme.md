@@ -7,7 +7,8 @@
 
 
 ## 2. Tabel IP Address
-<img width="900" height="1600" alt="WhatsApp Image 2026-06-07 at 09 46 27" src="https://github.com/user-attachments/assets/a3ef958a-7fea-48b2-a373-a00fe6622b07" />
+<img width="829" height="610" alt="Screenshot 2026-06-12 104424" src="https://github.com/user-attachments/assets/43eb62dc-2e40-428f-873b-088a118daf8f" />
+
 
 
 ## 3. Konfigurasi Tiap Perangkat
