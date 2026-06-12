@@ -11,7 +11,6 @@
 
 
 ## 3. Konfigurasi Tiap Perangkat
-<img width="960" height="877" alt="1 2" src="https://github.com/user-attachments/assets/ee8f1764-42ca-4b6c-bec1-0bb90b1abef1" />
 <img width="961" height="864" alt="1 3" src="https://github.com/user-attachments/assets/f441dd4f-ec43-4f9e-a61b-9956a0e3f23e" />
 <img width="961" height="872" alt="2 2" src="https://github.com/user-attachments/assets/ba1d4089-e35f-4f10-a0dc-9dd6a6268b95" />
 <img width="953" height="295" alt="3 1" src="https://github.com/user-attachments/assets/62b56a1b-ee65-4cf4-8992-d0c130121bcf" />
